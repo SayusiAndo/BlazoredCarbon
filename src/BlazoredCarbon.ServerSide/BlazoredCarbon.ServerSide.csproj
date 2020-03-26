@@ -6,4 +6,8 @@
         <AssemblyName>SayusiAndo.Carbon.BlazoredCarbon.ServerSide</AssemblyName>
     </PropertyGroup>
 
+    <ItemGroup>
+        <Folder Include="Data"/>
+    </ItemGroup>
+
 </Project>
