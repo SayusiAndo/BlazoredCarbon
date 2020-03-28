@@ -1,0 +1,17 @@
+<ul class="bx--side-nav__items">
+    @{
+        if (BlazoredCarbonComponents.Any())
+        {
+            foreach (BlazoredCarbonComponent blazoredCarbonComponent 
+                in BlazoredCarbonComponents.OrderBy(o => o.Name).ToList())
+            {
+                <li class="bx-side--nav__item">
+                    <a href="@blazoredCarbonComponent.Link">
+                        @blazoredCarbonComponent.Name
+                    </a>
+                </li>
+            }
+        }
+    }
+
+</ul>

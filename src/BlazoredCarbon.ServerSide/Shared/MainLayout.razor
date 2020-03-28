@@ -1,15 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
-@* <div class="sidebar"> *@
-@* <NavMenu/> *@
-@* </div> *@
+<header class="bx--header" aria-label="BlazoredCarbon" role="banner">
+    <a href="#" class="bx--header__name">
+        <span class="bx--header__name--prefix">BlazoredCarbon</span>
+    </a>
+    <div class="bx--header__global"></div>
+</header>
 
-<div class="main">
-    <div class="top-row px-4">
-        @* <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a> *@
-    </div>
+<nav class="bx--side-nav bx--side-nav__navigation bx--side-nav--expanded">
+    <LeftHandMenu></LeftHandMenu>
+</nav>
 
-    <div class="content px-4">
+<div class="bx--grid" style="margin-left: 256px; margin-top: 47px; padding-top:3px;">
+    <div class="bx--row" style="">
         @Body
     </div>
 </div>
