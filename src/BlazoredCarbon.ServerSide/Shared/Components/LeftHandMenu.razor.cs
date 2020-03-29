@@ -11,7 +11,14 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.ServerSide.Shared.Components
                 Name = "Tab",
                 Desc = "Tab component",
                 Status = StatusEnum.InProgress,
-                Link = "tab"
+                Link = "tabs"
+            },
+            new BlazoredCarbonComponent
+            {
+                Name = "Tab - Original Carbon Vanilla",
+                Desc = "Tab component",
+                Status = StatusEnum.InProgress,
+                Link = "tabs-orig"
             },
             new BlazoredCarbonComponent
             {

@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredCarbon.ServerSide", "BlazoredCarbon.ServerSide\BlazoredCarbon.ServerSide.csproj", "{EBBBE685-15B7-42FD-B86E-C151ED28870D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredCarbon", "BlazoredCarbon\BlazoredCarbon.csproj", "{881469EA-E50D-449D-A316-520E9F97ED3F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredCarbon.Test", "BlazoredCarbon.Test\BlazoredCarbon.Test.csproj", "{246417E4-FD7E-42BF-85FB-C5B861B51335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazoredCarbon", "BlazoredCarbon\BlazoredCarbon.csproj", "{B0683812-C4B4-43CD-AA6D-0CDAB50FC2C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +16,13 @@ Global
 		{EBBBE685-15B7-42FD-B86E-C151ED28870D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBBBE685-15B7-42FD-B86E-C151ED28870D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBBBE685-15B7-42FD-B86E-C151ED28870D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{881469EA-E50D-449D-A316-520E9F97ED3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{881469EA-E50D-449D-A316-520E9F97ED3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{881469EA-E50D-449D-A316-520E9F97ED3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{881469EA-E50D-449D-A316-520E9F97ED3F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{246417E4-FD7E-42BF-85FB-C5B861B51335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{246417E4-FD7E-42BF-85FB-C5B861B51335}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{246417E4-FD7E-42BF-85FB-C5B861B51335}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{246417E4-FD7E-42BF-85FB-C5B861B51335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0683812-C4B4-43CD-AA6D-0CDAB50FC2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0683812-C4B4-43CD-AA6D-0CDAB50FC2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0683812-C4B4-43CD-AA6D-0CDAB50FC2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0683812-C4B4-43CD-AA6D-0CDAB50FC2C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
