@@ -1,0 +1,9 @@
+@using SayusiAndo.Carbon.BlazoredCarbon.Utils.Components
+<CascadingValue Value="@this">
+    <DynamicElement
+        TagName="li"
+        class="@GetCss()"
+        role="tab">
+        @ChildContent
+    </DynamicElement>
+</CascadingValue>

@@ -19,6 +19,16 @@
         <Content Update="Pages\Accordion.razor">
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
+        <Content Update="Pages\Tabs.razor">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        </Content>
+        <Content Update="Pages\Tabs-Orig.razor">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\BlazoredCarbon\BlazoredCarbon.csproj"/>
     </ItemGroup>
 
 </Project>
