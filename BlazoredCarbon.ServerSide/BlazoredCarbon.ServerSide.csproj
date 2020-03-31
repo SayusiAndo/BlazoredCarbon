@@ -7,12 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Data"/>
+        <Folder Include="Data" />
     </ItemGroup>
 
     <ItemGroup>
-        <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css"/>
-        <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css.map"/>
+        <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css" />
+        <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css.map" />
     </ItemGroup>
 
     <ItemGroup>
@@ -22,13 +22,10 @@
         <Content Update="Pages\Tabs.razor">
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
-        <Content Update="Pages\Tabs-Orig.razor">
-            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-        </Content>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\BlazoredCarbon\BlazoredCarbon.csproj"/>
+        <ProjectReference Include="..\BlazoredCarbon\BlazoredCarbon.csproj" />
     </ItemGroup>
 
 </Project>
