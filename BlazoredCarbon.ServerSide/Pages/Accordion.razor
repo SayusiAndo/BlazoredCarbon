@@ -1,12 +1,22 @@
 @page "/accordion"
-<div style="margin-top: 47px; padding-top: 3px">
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-    <h1>Accordion Accordion Accordion Accordion Accordion</h1>
-</div>
+@using SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
+<p>
+    <BCAccordion>
+        <BCAccordionItem>
+            <BCAccordionTitle>First item</BCAccordionTitle>
+            <BCAccordionContent>First item First item First item First item First item First item </BCAccordionContent>
+        </BCAccordionItem>
+        <BCAccordionItem InitialSetup="@true">
+            <BCAccordionTitle>Second item</BCAccordionTitle>
+            <BCAccordionContent>Second item Second item Second item Second item Second item Second item </BCAccordionContent>
+        </BCAccordionItem>
+        <BCAccordionItem>
+            <BCAccordionTitle>Third item</BCAccordionTitle>
+            <BCAccordionContent>Third item Third item Third item Third item Third item Third item </BCAccordionContent>
+        </BCAccordionItem>
+        <BCAccordionItem>
+            <BCAccordionTitle>Fourth item</BCAccordionTitle>
+            <BCAccordionContent>Fourth item Fourth item Fourth item Fourth item Fourth item Fourth item </BCAccordionContent>
+        </BCAccordionItem>
+    </BCAccordion>
+</p>
