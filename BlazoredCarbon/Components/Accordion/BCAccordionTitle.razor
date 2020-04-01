@@ -1,0 +1,17 @@
+@using SayusiAndo.Carbon.BlazoredCarbon.Utils.Components
+<DynamicElement class="bx--accordion__heading"
+                TagName="button"
+                @onclick="Select">
+    <svg focusable="false"
+         preserveAspectRatio="xMidYMid meet"
+         style="will-change: transform;"
+         xmlns="http://www.w3.org/2000/svg"
+         class="bx--accordion__arrow"
+         width="16"
+         height="16"
+         viewBox="0 0 16 16">
+        <path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path>
+    </svg>
+    <DynamicElement class="bx--accordion__title"
+                    TagName="div">@ChildContent</DynamicElement>
+</DynamicElement>
