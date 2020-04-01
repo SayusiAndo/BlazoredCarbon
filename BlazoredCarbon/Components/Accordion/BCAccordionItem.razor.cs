@@ -10,6 +10,9 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
+        [Parameter]
+        public bool InitialSetup { get; set; } = false;
+
         [CascadingParameter]
         public BCAccordion BcAccordion { get; set; }
 
@@ -28,6 +31,11 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
 
         protected override async Task OnInitializedAsync()
         {
+            if (InitialSetup)
+            {
+                BcAccordion.ActiveAccordionItem = null;
+                BcAccordion.ActiveAccordionItem = this;
+            }
             BcAccordion.BcAccordionItems.Add(this);
             await base.OnInitializedAsync();
         }
