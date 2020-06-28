@@ -4,7 +4,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
     {
         Primary,
         Secondary,
-        Teritary,
+        Tertiary,
         Danger,
         Ghost
     }

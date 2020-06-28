@@ -19,6 +19,13 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.ServerSide.Shared.Components
                 Desc = "Accordion Component",
                 Status = StatusEnum.Planned,
                 Link = "accordion"
+            },
+            new BlazoredCarbonComponent
+            {
+                Name = "Button",
+                Desc = "Button Component",
+                Status = StatusEnum.InProgress,
+                Link = "button"
             }
         };
     }
