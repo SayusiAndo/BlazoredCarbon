@@ -3,9 +3,22 @@
 <p>
     <h1>Button</h1>
 </p>
-<p>Demo</p>
 <p>
-    Demo content
+    <h2>Click function</h2>
+</p>
+<p>
+    <div>
+        <div>
+            <BcButton @onclick="@(async () => await ChangeTitle("First").ConfigureAwait(false))">First</BcButton>
+            <BcButton @onclick="@(async () => await ChangeTitle("Second").ConfigureAwait(false))">Second</BcButton>
+            <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton>
+        </div>
+        <div>
+            <BcButton>
+                @_title
+            </BcButton>
+        </div>
+    </div>
 </p>
 <p>
     <h2>Primary buttons</h2>
@@ -67,3 +80,13 @@
     <BcButton Size="@Size.Field" Kind="@Kind.Ghost" State="@State.Disabled">Primary Button 5</BcButton>
     <BcButton Size="@Size.Small" Kind="@Kind.Ghost" State="@State.Disabled">Primary Button 6</BcButton>
 </p>
+
+@code
+{
+    private string _title = "Default title";
+
+    private async Task ChangeTitle(string title)
+    {
+        _title = title;
+    }
+}

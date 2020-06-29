@@ -2,6 +2,7 @@
     TagName="@HtmlElements.Button"
     class="@GetCss()"
     type="@ButtonTypes.Button"
-    disabled="@_stateValue">
+    disabled="@_stateValue"
+    @onclick=@OnClick>
     @ChildContent
 </DynamicElement>

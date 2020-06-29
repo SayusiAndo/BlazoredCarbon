@@ -3,6 +3,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
     using System;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
+    using Microsoft.AspNetCore.Components.Web;
 
     public partial class BcButton
     {
@@ -20,6 +21,9 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
+
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnClick { get; set; }
 
         private string _kindValue = string.Empty;
         private string _sizeValue = string.Empty;
@@ -46,7 +50,6 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
             await SetOrDefaultSizeValue().ConfigureAwait(false);
             await SetOrDefaultStateValue().ConfigureAwait(false);
             await SetOrDefaultButtonType().ConfigureAwait(false);
-            await base.OnInitializedAsync();
         }
 
         private async Task SetOrDefaultButtonType()
