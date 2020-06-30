@@ -13,11 +13,22 @@
             <BcButton @onclick="@(async () => await ChangeTitle("Second").ConfigureAwait(false))">Second</BcButton>
             <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton>
         </div>
-        <div>
-            <BcButton>
-                @_title
-            </BcButton>
-        </div>
+        <p >
+            <div>
+                <BcButton @onclick="@(async () => await ChangeSize().ConfigureAwait(false))"
+                           Kind="@Kind.Secondary"
+                           Size="@Size.Field">
+                    Change Size
+                </BcButton>
+            </div>
+        </p>
+        <p >
+            <div>
+                <BcButton Size="@_size">
+                    @_title
+                </BcButton>
+            </div>
+        </p>
     </div>
 </p>
 <p>
@@ -84,9 +95,15 @@
 @code
 {
     private string _title = "Default title";
+    private Size _size = Size.Default;
 
     private async Task ChangeTitle(string title)
     {
         _title = title;
+    }
+
+    private async Task ChangeSize()
+    {
+        _size = Size.Field;
     }
 }

@@ -1,6 +1,7 @@
 namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
 {
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
     using Microsoft.AspNetCore.Components.Web;
@@ -25,6 +26,9 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         [Parameter]
         public EventCallback<MouseEventArgs> OnClick { get; set; }
 
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IDictionary<string, object> UnknownParameters { get; set; }
+
         private string _kindValue = string.Empty;
         private string _sizeValue = string.Empty;
         private bool _stateValue = false;
@@ -44,15 +48,8 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         private string _buttonKindDangerString = "bx--btn--danger";
         private string _buttonKindGhostString = "bx--btn--ghost";
 
-        protected override async Task OnInitializedAsync()
-        {
-            await SetOrDefaultKindValue().ConfigureAwait(false);
-            await SetOrDefaultSizeValue().ConfigureAwait(false);
-            await SetOrDefaultStateValue().ConfigureAwait(false);
-            await SetOrDefaultButtonType().ConfigureAwait(false);
-        }
 
-        private async Task SetOrDefaultButtonType()
+        private void SetOrDefaultButtonType()
         {
             switch (ButtonType)
             {
@@ -70,7 +67,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
             }
         }
 
-        private async Task SetOrDefaultStateValue()
+        private void SetOrDefaultStateValue()
         {
             switch (State)
             {
@@ -88,7 +85,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
             }
         }
 
-        private async Task SetOrDefaultSizeValue()
+        private void SetOrDefaultSizeValue()
         {
             switch (Size)
             {
@@ -110,7 +107,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
             }
         }
 
-        private async Task SetOrDefaultKindValue()
+        private void SetOrDefaultKindValue()
         {
             switch (Kind)
             {
@@ -142,6 +139,11 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
 
         private string GetCss()
         {
+            SetOrDefaultKindValue();
+            SetOrDefaultSizeValue();
+            SetOrDefaultStateValue();
+            SetOrDefaultButtonType();
+
             return $"{_buttonDefaultCss} " +
                    $"{_kindValue} " +
                    $"{_sizeValue}";
