@@ -9,17 +9,17 @@
 <p>
     <div>
         <div>
-            <BcButton @onclick="@(async () => await ChangeTitle("First").ConfigureAwait(false))">First</BcButton>
-            <BcButton @onclick="@(async () => await ChangeTitle("Second").ConfigureAwait(false))">Second</BcButton>
-            <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton>
+            @* <BcButton @onclick="@(async () => await ChangeTitle("First").ConfigureAwait(false))">First</BcButton> *@
+            @* <BcButton @onclick="@(async () => await ChangeTitle("Second").ConfigureAwait(false))">Second</BcButton> *@
+            @* <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton> *@
         </div>
         <p >
             <div>
-                <BcButton @onclick="@(async () => await ChangeSize().ConfigureAwait(false))"
-                           Kind="@Kind.Secondary"
-                           Size="@Size.Field">
-                    Change Size
-                </BcButton>
+                @* <BcButton @onclick="@(async () => await ChangeSize().ConfigureAwait(false))" *@
+                @*            Kind="@Kind.Secondary" *@
+                @*            Size="@Size.Field"> *@
+                @*     Change Size *@
+                @* </BcButton> *@
             </div>
         </p>
         <p >
@@ -31,66 +31,66 @@
         </p>
     </div>
 </p>
-<p>
-    <h2>Primary buttons</h2>
-</p>
-<p>
-    <BcButton Size="@Size.Default" Kind="@Kind.Primary" State="@State.Enabled">Primary Button 1</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Primary" State="@State.Enabled">Primary Button 2</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Primary" State="@State.Enabled">Primary Button 3</BcButton>
-
-    <BcButton Size="@Size.Default" Kind="@Kind.Primary" State="@State.Disabled">Primary Button 4</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Primary" State="@State.Disabled">Primary Button 5</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Primary" State="@State.Disabled">Primary Button 6</BcButton>
-</p>
-<p>
-    <h2>Secondary buttons</h2>
-</p>
-<p>
-    <BcButton Size="@Size.Default" Kind="@Kind.Secondary" State="@State.Enabled">Secondary Button 1</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Secondary" State="@State.Enabled">Secondary Button 2</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Secondary" State="@State.Enabled">Secondary Button 3</BcButton>
-
-    <BcButton Size="@Size.Default" Kind="@Kind.Secondary" State="@State.Disabled">Secondary Button 4</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Secondary" State="@State.Disabled">Secondary Button 5</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Secondary" State="@State.Disabled">Secondary Button 6</BcButton>
-</p>
-<p>
-    <h2>Tertiary buttons</h2>
-</p>
-<p>
-    <BcButton Size="@Size.Default" Kind="@Kind.Tertiary" State="@State.Enabled">Tertiary Button 1</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Tertiary" State="@State.Enabled">Tertiary Button 2</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Tertiary" State="@State.Enabled">Tertiary Button 3</BcButton>
-
-    <BcButton Size="@Size.Default" Kind="@Kind.Tertiary" State="@State.Disabled">Tertiary Button 4</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Tertiary" State="@State.Disabled">Tertiary Button 5</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Tertiary" State="@State.Disabled">Tertiary Button 6</BcButton>
-</p>
-<p>
-    <h2>Danger buttons</h2>
-</p>
-<p>
-    <BcButton Size="@Size.Default" Kind="@Kind.Danger" State="@State.Enabled">Danger Button 1</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Danger" State="@State.Enabled">Danger Button 2</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Danger" State="@State.Enabled">Danger Button 3</BcButton>
-
-    <BcButton Size="@Size.Default" Kind="@Kind.Danger" State="@State.Disabled">Danger Button 4</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Danger" State="@State.Disabled">Danger Button 5</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Danger" State="@State.Disabled">Danger Button 6</BcButton>
-</p>
-<p>
-    <h2>Ghost buttons</h2>
-</p>
-<p>
-    <BcButton Size="@Size.Default" Kind="@Kind.Ghost" State="@State.Enabled">Ghost Button 1</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Ghost" State="@State.Enabled">Ghost Button 2</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Ghost" State="@State.Enabled">Ghost Button 3</BcButton>
-
-    <BcButton Size="@Size.Default" Kind="@Kind.Ghost" State="@State.Disabled">Ghost Button 4</BcButton>
-    <BcButton Size="@Size.Field" Kind="@Kind.Ghost" State="@State.Disabled">Ghost Button 5</BcButton>
-    <BcButton Size="@Size.Small" Kind="@Kind.Ghost" State="@State.Disabled">Ghost Button 6</BcButton>
-</p>
+@* <p> *@
+@*     <h2>Primary buttons</h2> *@
+@* </p> *@
+@* <p> *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Primary" IsEnabled="@true">Primary Button 1</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Primary" IsEnabled="@true">Primary Button 2</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Primary" IsEnabled="@true">Primary Button 3</BcButton> *@
+@* *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Primary" IsEnabled="@false">Primary Button 4</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Primary" IsEnabled="@false">Primary Button 5</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Primary" IsEnabled="@false">Primary Button 6</BcButton> *@
+@* </p> *@
+@* <p> *@
+@*     <h2>Secondary buttons</h2> *@
+@* </p> *@
+@* <p> *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Secondary" IsEnabled="@true">Secondary Button 1</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Secondary" IsEnabled="@true">Secondary Button 2</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Secondary" IsEnabled="@true">Secondary Button 3</BcButton> *@
+@* *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Secondary" IsEnabled="@false">Secondary Button 4</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Secondary" IsEnabled="@false">Secondary Button 5</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Secondary" IsEnabled="@false">Secondary Button 6</BcButton> *@
+@* </p> *@
+@* <p> *@
+@*     <h2>Tertiary buttons</h2> *@
+@* </p> *@
+@* <p> *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Tertiary" IsEnabled="@true">Tertiary Button 1</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Tertiary" IsEnabled="@true">Tertiary Button 2</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Tertiary" IsEnabled="@true">Tertiary Button 3</BcButton> *@
+@* *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Tertiary" IsEnabled="@false">Tertiary Button 4</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Tertiary" IsEnabled="@false">Tertiary Button 5</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Tertiary" IsEnabled="@false">Tertiary Button 6</BcButton> *@
+@* </p> *@
+@* <p> *@
+@*     <h2>Danger buttons</h2> *@
+@* </p> *@
+@* <p> *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Danger" IsEnabled="@true">Danger Button 1</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Danger" IsEnabled="@true">Danger Button 2</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Danger" IsEnabled="@true">Danger Button 3</BcButton> *@
+@* *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Danger" IsEnabled="@false">Danger Button 4</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Danger" IsEnabled="@false">Danger Button 5</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Danger" IsEnabled="@false">Danger Button 6</BcButton> *@
+@* </p> *@
+@* <p> *@
+@*     <h2>Ghost buttons</h2> *@
+@* </p> *@
+@* <p> *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Ghost" IsEnabled="@true">Ghost Button 1</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Ghost" IsEnabled="@true">Ghost Button 2</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Ghost" IsEnabled="@true">Ghost Button 3</BcButton> *@
+@* *@
+@*     <BcButton Size="@Size.Default" Kind="@Kind.Ghost" IsEnabled="@false">Ghost Button 4</BcButton> *@
+@*     <BcButton Size="@Size.Field" Kind="@Kind.Ghost" IsEnabled="@false">Ghost Button 5</BcButton> *@
+@*     <BcButton Size="@Size.Small" Kind="@Kind.Ghost" IsEnabled="@false">Ghost Button 6</BcButton> *@
+@* </p> *@
 
 @code
 {

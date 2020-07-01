@@ -15,7 +15,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         public Size Size { get; set; }
 
         [Parameter]
-        public State State { get; set; }
+        public bool IsDisabled { get; set; } = false;
 
         [Parameter]
         public ButtonType ButtonType { get; set; }
@@ -31,12 +31,9 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
 
         private string _kindValue = string.Empty;
         private string _sizeValue = string.Empty;
-        private bool _stateValue = false;
         private string _buttonType = string.Empty;
 
         private string _buttonDefaultCss = "bx--btn";
-        private string _buttonEnabledDisabledEnabledValueString = "enabled";
-        private string _buttonEnabledDisabledDisabledValueString = "disabled";
 
         private string _buttonSizeDefaultString = string.Empty;
         private string _buttonSizeFieldString = "bx--btn--field";
@@ -63,24 +60,6 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
 
                 default:
                     _buttonType = ButtonTypes.Button;
-                    break;
-            }
-        }
-
-        private void SetOrDefaultStateValue()
-        {
-            switch (State)
-            {
-                case State.Enabled:
-                    _stateValue = false;
-                    break;
-
-                case State.Disabled:
-                    _stateValue = true;
-                    break;
-
-                default:
-                    _stateValue = false;
                     break;
             }
         }
@@ -141,7 +120,6 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         {
             SetOrDefaultKindValue();
             SetOrDefaultSizeValue();
-            SetOrDefaultStateValue();
             SetOrDefaultButtonType();
 
             return $"{_buttonDefaultCss} " +
