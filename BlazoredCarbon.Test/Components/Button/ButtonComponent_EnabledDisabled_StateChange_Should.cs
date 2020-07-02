@@ -9,8 +9,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     // ReSharper disable once InconsistentNaming
     public class ButtonComponent_EnabledDisabled_StateChange_Should : TestContext
     {
-        [Theory(DisplayName = "Checks whether the component works properly," +
-                              "when its IsDisabled parameter value changes.")]
+        [Theory]
         [InlineData(true, false, false)]
         [InlineData(false, true, true)]
         public async Task Change_EnabledDisabledState(

@@ -10,8 +10,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
     public class ButtonComponent_EnabledDisabled_Should : TestContext
     {
-        [Fact(DisplayName = "Checks whether the component is enabled by default," +
-                            "independently whether it is configured or not.")]
+        [Fact]
         public async Task BeEnabled_ByDefault()
         {
             // Arrange
@@ -22,8 +21,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
             cut.Find("button").ToMarkup().Contains("disabled").Should().BeFalse();
         }
 
-        [Fact(DisplayName = "Checks whether the generated HTML is correct when" +
-                            "enabled/disabled state is configured.")]
+        [Fact]
         public async Task BeEnabled_WhenEnabledStateIsConfigured()
         {
             // Arrange
@@ -35,8 +33,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
             cut.Find("button").ToMarkup().Contains("disabled").Should().BeFalse();
         }
 
-        [Fact(DisplayName = "Checks whether the generated HTML is correct," +
-                            "enabled/disabled state is configured.")]
+        [Fact]
         public async Task BeDisabled_WhenDisabledStateIsConfigured()
         {
             // Arrange
