@@ -6,6 +6,9 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Tabs
 
     public partial class BCTab
     {
+        private string _defaultCss = "bx--tabs__nav-item";
+        private string _selectedCss = "bx--tabs__nav-item--selected";
+
         [CascadingParameter]
         public BCTabList BcTabList { get; set; }
 
@@ -20,9 +23,6 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Tabs
 
         public bool Selected => BcTabs.Selected == this;
         public RenderFragment Content { get; set; }
-
-        private string _defaultCss = "bx--tabs__nav-item";
-        private string _selectedCss = "bx--tabs__nav-item--selected";
 
         private string GetCss()
         {

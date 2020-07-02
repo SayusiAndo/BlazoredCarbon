@@ -3,7 +3,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
     using Microsoft.AspNetCore.Components;
 
     /// <summary>
-    /// The text will be displayed in the accordion item.
+    ///     The text will be displayed in the accordion item.
     /// </summary>
     /// <example>
     ///     <BCAccordion>
@@ -20,11 +20,11 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
     public partial class BCAccordionTitle
     {
         /// <summary>
-        /// The content of the component
+        ///     The content of the component
         /// </summary>
         [Parameter]
         public RenderFragment ChildContent { get; set; }
-        
+
         [CascadingParameter]
         public BCAccordionItem Parent { get; set; }
 

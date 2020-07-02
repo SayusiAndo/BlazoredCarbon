@@ -1,0 +1,71 @@
+@page "/button"
+
+<p>
+    <h1>Button</h1>
+</p>
+<p>
+    <div>
+        <div>
+            <BcButton @onclick="@(async () => await ChangeTitle("First").ConfigureAwait(false))">First</BcButton>
+            <BcButton @onclick="@(async () => await ChangeTitle("Second").ConfigureAwait(false))">Second</BcButton>
+            <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton>
+        </div>
+        <div>
+            <BcButton @onclick="@(async () => await ChangeSize(Size.Default).ConfigureAwait(false))">
+                @Size.Default
+            </BcButton>
+            <BcButton @onclick="@(async () => await ChangeSize(Size.Field).ConfigureAwait(false))">
+                @Size.Field
+            </BcButton>
+            <BcButton @onclick="@(async () => await ChangeSize(Size.Small).ConfigureAwait(false))">
+                @Size.Small
+            </BcButton>
+        </div>
+        <div>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Primary).ConfigureAwait(false))">@Kind.Primary</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Secondary).ConfigureAwait(false))">@Kind.Secondary</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Tertiary).ConfigureAwait(false))">@Kind.Tertiary</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Danger).ConfigureAwait(false))">@Kind.Danger</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Ghost).ConfigureAwait(false))">@Kind.Ghost</BcButton>
+        </div>
+        <div>
+            <BcButton @onclick="@(async () => await ToState(false).ConfigureAwait(false))">Enabled</BcButton>
+            <BcButton @onclick="@(async () => await ToState(true).ConfigureAwait(false))">Disabled</BcButton>
+        </div>
+        <div>
+            <div>
+                <BcButton Size="@_size" Kind="@_kind" IsDisabled="@_isDisabled">
+                    @_title
+                </BcButton>
+            </div>
+        </div>
+    </div>
+</p>
+
+@code
+{
+    private string _title = "Default title";
+    private string _size = Size.Default;
+    private string _kind = Kind.Primary;
+    private bool _isDisabled = false;
+
+    private async Task ToState(bool state)
+    {
+        _isDisabled = state;
+    }
+
+    private async Task ToKind(string kind)
+    {
+        _kind = kind;
+    }
+
+    private async Task ChangeTitle(string title)
+    {
+        _title = title;
+    }
+
+    private async Task ChangeSize(string size)
+    {
+        _size = size;
+    }
+}
