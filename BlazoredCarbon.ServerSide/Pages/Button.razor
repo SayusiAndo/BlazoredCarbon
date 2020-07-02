@@ -9,26 +9,28 @@
 <p>
     <div>
         <div>
-            @* <BcButton @onclick="@(async () => await ChangeTitle("First").ConfigureAwait(false))">First</BcButton> *@
-            @* <BcButton @onclick="@(async () => await ChangeTitle("Second").ConfigureAwait(false))">Second</BcButton> *@
-            @* <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton> *@
+            <BcButton @onclick="@(async () => await ChangeTitle("First").ConfigureAwait(false))">First</BcButton>
+            <BcButton @onclick="@(async () => await ChangeTitle("Second").ConfigureAwait(false))">Second</BcButton>
+            <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton>
         </div>
-        <p >
-            <div>
-                @* <BcButton @onclick="@(async () => await ChangeSize().ConfigureAwait(false))" *@
-                @*            Kind="@Kind.Secondary" *@
-                @*            Size="@Size.Field"> *@
-                @*     Change Size *@
-                @* </BcButton> *@
-            </div>
-        </p>
-        <p >
+        <div>
+            <BcButton @onclick="@(async () => await ChangeSize(Size.Default).ConfigureAwait(false))">
+                @Size.Default.ToString()
+            </BcButton>
+            <BcButton @onclick="@(async () => await ChangeSize(Size.Field).ConfigureAwait(false))">
+                @Size.Field.ToString()
+            </BcButton>
+            <BcButton @onclick="@(async () => await ChangeSize(Size.Small).ConfigureAwait(false))">
+                @Size.Small.ToString()
+            </BcButton>
+        </div>
+        <div>
             <div>
                 <BcButton Size="@_size">
                     @_title
                 </BcButton>
             </div>
-        </p>
+        </div>
     </div>
 </p>
 @* <p> *@
@@ -95,15 +97,15 @@
 @code
 {
     private string _title = "Default title";
-    private Size _size = Size.Default;
+    private string _size = Size.Default;
 
     private async Task ChangeTitle(string title)
     {
         _title = title;
     }
 
-    private async Task ChangeSize()
+    private async Task ChangeSize(string size)
     {
-        _size = Size.Field;
+        _size = size;
     }
 }

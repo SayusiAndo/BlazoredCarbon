@@ -1,9 +1,9 @@
 namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
 {
-    public enum Size
+    public static class Size
     {
-        Default,
-        Field,
-        Small
+        public const string Default = "default";
+        public const string Field = "field";
+        public const string Small = "small";
     }
 }

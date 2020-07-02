@@ -12,7 +12,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         public Kind Kind { get; set; }
 
         [Parameter]
-        public Size Size { get; set; }
+        public string Size { get; set; }
 
         [Parameter]
         public bool IsDisabled { get; set; } = false;
@@ -68,15 +68,15 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         {
             switch (Size)
             {
-                case Size.Default:
+                case Button.Size.Default:
                     _sizeValue = _buttonSizeDefaultString;
                     break;
 
-                case Size.Field:
+                case Button.Size.Field:
                     _sizeValue = _buttonSizeFieldString;
                     break;
 
-                case Size.Small:
+                case Button.Size.Small:
                     _sizeValue = _buttonSizeSmallString;
                     break;
 
