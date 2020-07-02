@@ -6,18 +6,18 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Utils.Components
     using Microsoft.AspNetCore.Components.Rendering;
 
     /// <summary>
-    /// Renders a HTML element with the name and attributes.
+    ///     Renders a HTML element with the name and attributes.
     /// </summary>
     public class DynamicElement : ComponentBase
     {
         /// <summary>
-        /// Name of the element
+        ///     Name of the element
         /// </summary>
         [Parameter]
         public string TagName { get; set; }
 
         /// <summary>
-        /// Reference to other components
+        ///     Reference to other components
         /// </summary>
         [Parameter]
         public ElementReference ElementReference { get; set; }
@@ -26,13 +26,13 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Utils.Components
         public Action<ElementReference> ElementReferenceChanged { get; set; }
 
         /// <summary>
-        /// Content of the HTML element
+        ///     Content of the HTML element
         /// </summary>
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
         /// <summary>
-        /// Elements are not named as properties
+        ///     Elements are not named as properties
         /// </summary>
         [Parameter(CaptureUnmatchedValues = true)]
         public IDictionary<string, object> MyParams { get; set; }

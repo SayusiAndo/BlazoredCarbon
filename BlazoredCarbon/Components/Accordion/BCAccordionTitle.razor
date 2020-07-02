@@ -1,4 +1,3 @@
-@using SayusiAndo.Carbon.BlazoredCarbon.Utils.Components
 <DynamicElement class="bx--accordion__heading"
                 TagName="button"
                 @onclick="Select">
@@ -13,5 +12,7 @@
         <path d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"></path>
     </svg>
     <DynamicElement class="bx--accordion__title"
-                    TagName="div">@ChildContent</DynamicElement>
+                    TagName="div">
+        @ChildContent
+    </DynamicElement>
 </DynamicElement>

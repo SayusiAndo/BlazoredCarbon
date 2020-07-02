@@ -4,28 +4,28 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
     using Microsoft.AspNetCore.Components;
 
     /// <summary>
-    /// Top element of Accordion Component
+    ///     Top element of Accordion Component
     /// </summary>
     /// <example>
-    ///    <BCAccordion>some content</BCAccordion>
+    ///     <BCAccordion>some content</BCAccordion>
     /// </example>
-    /// <see cref="BCAccordionItem"/>
-    /// <see cref="BCAccordionTitle"/>
-    /// <see cref="BCAccordionContent"/>
+    /// <see cref="BCAccordionItem" />
+    /// <see cref="BCAccordionTitle" />
+    /// <see cref="BCAccordionContent" />
     public partial class BCAccordion
     {
-        /// <summary>
-        /// The <see cref="RenderFragment">content</see> of the component.
-        /// </summary>
-        /// <example>
-        ///    <BCAccordion>some content</BCAccordion>
-        /// </example>
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        private BCAccordionItem _selected;
 
         public List<BCAccordionItem> BcAccordionItems = new List<BCAccordionItem>();
 
-        private BCAccordionItem _selected;
+        /// <summary>
+        ///     The <see cref="RenderFragment">content</see> of the component.
+        /// </summary>
+        /// <example>
+        ///     <BCAccordion>some content</BCAccordion>
+        /// </example>
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
 
         public BCAccordionItem ActiveAccordionItem
         {
@@ -36,6 +36,5 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
                 InvokeAsync(StateHasChanged);
             }
         }
-
     }
 }

@@ -1,5 +1,6 @@
 namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
     using Bunit;
     using Carbon.BlazoredCarbon.Components.Button;
@@ -7,6 +8,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     using Xunit;
 
     // ReSharper disable once InconsistentNaming
+    [ExcludeFromCodeCoverage]
     public class ButtonComponent_EnabledDisabled_StateChange_Should : TestContext
     {
         [Theory]

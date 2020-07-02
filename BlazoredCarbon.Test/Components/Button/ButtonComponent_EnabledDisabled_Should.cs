@@ -1,13 +1,13 @@
 namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 {
-    using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
-    using AngleSharp.Dom;
     using Bunit;
     using Carbon.BlazoredCarbon.Components.Button;
     using FluentAssertions;
     using Xunit;
 
+    [ExcludeFromCodeCoverage]
     public class ButtonComponent_EnabledDisabled_Should : TestContext
     {
         [Fact]

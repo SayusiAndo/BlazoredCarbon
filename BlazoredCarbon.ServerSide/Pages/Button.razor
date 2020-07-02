@@ -4,9 +4,6 @@
     <h1>Button</h1>
 </p>
 <p>
-    <h2>Click function</h2>
-</p>
-<p>
     <div>
         <div>
             <BcButton @onclick="@(async () => await ChangeTitle("First").ConfigureAwait(false))">First</BcButton>
@@ -15,89 +12,52 @@
         </div>
         <div>
             <BcButton @onclick="@(async () => await ChangeSize(Size.Default).ConfigureAwait(false))">
-                @Size.Default.ToString()
+                @Size.Default
             </BcButton>
             <BcButton @onclick="@(async () => await ChangeSize(Size.Field).ConfigureAwait(false))">
-                @Size.Field.ToString()
+                @Size.Field
             </BcButton>
             <BcButton @onclick="@(async () => await ChangeSize(Size.Small).ConfigureAwait(false))">
-                @Size.Small.ToString()
+                @Size.Small
             </BcButton>
         </div>
         <div>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Primary).ConfigureAwait(false))">@Kind.Primary</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Secondary).ConfigureAwait(false))">@Kind.Secondary</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Tertiary).ConfigureAwait(false))">@Kind.Tertiary</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Danger).ConfigureAwait(false))">@Kind.Danger</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(Kind.Ghost).ConfigureAwait(false))">@Kind.Ghost</BcButton>
+        </div>
+        <div>
+            <BcButton @onclick="@(async () => await ToState(false).ConfigureAwait(false))">Enabled</BcButton>
+            <BcButton @onclick="@(async () => await ToState(true).ConfigureAwait(false))">Disabled</BcButton>
+        </div>
+        <div>
             <div>
-                <BcButton Size="@_size">
+                <BcButton Size="@_size" Kind="@_kind" IsDisabled="@_isDisabled">
                     @_title
                 </BcButton>
             </div>
         </div>
     </div>
 </p>
-@* <p> *@
-@*     <h2>Primary buttons</h2> *@
-@* </p> *@
-@* <p> *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Primary" IsEnabled="@true">Primary Button 1</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Primary" IsEnabled="@true">Primary Button 2</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Primary" IsEnabled="@true">Primary Button 3</BcButton> *@
-@* *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Primary" IsEnabled="@false">Primary Button 4</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Primary" IsEnabled="@false">Primary Button 5</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Primary" IsEnabled="@false">Primary Button 6</BcButton> *@
-@* </p> *@
-@* <p> *@
-@*     <h2>Secondary buttons</h2> *@
-@* </p> *@
-@* <p> *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Secondary" IsEnabled="@true">Secondary Button 1</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Secondary" IsEnabled="@true">Secondary Button 2</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Secondary" IsEnabled="@true">Secondary Button 3</BcButton> *@
-@* *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Secondary" IsEnabled="@false">Secondary Button 4</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Secondary" IsEnabled="@false">Secondary Button 5</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Secondary" IsEnabled="@false">Secondary Button 6</BcButton> *@
-@* </p> *@
-@* <p> *@
-@*     <h2>Tertiary buttons</h2> *@
-@* </p> *@
-@* <p> *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Tertiary" IsEnabled="@true">Tertiary Button 1</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Tertiary" IsEnabled="@true">Tertiary Button 2</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Tertiary" IsEnabled="@true">Tertiary Button 3</BcButton> *@
-@* *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Tertiary" IsEnabled="@false">Tertiary Button 4</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Tertiary" IsEnabled="@false">Tertiary Button 5</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Tertiary" IsEnabled="@false">Tertiary Button 6</BcButton> *@
-@* </p> *@
-@* <p> *@
-@*     <h2>Danger buttons</h2> *@
-@* </p> *@
-@* <p> *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Danger" IsEnabled="@true">Danger Button 1</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Danger" IsEnabled="@true">Danger Button 2</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Danger" IsEnabled="@true">Danger Button 3</BcButton> *@
-@* *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Danger" IsEnabled="@false">Danger Button 4</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Danger" IsEnabled="@false">Danger Button 5</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Danger" IsEnabled="@false">Danger Button 6</BcButton> *@
-@* </p> *@
-@* <p> *@
-@*     <h2>Ghost buttons</h2> *@
-@* </p> *@
-@* <p> *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Ghost" IsEnabled="@true">Ghost Button 1</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Ghost" IsEnabled="@true">Ghost Button 2</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Ghost" IsEnabled="@true">Ghost Button 3</BcButton> *@
-@* *@
-@*     <BcButton Size="@Size.Default" Kind="@Kind.Ghost" IsEnabled="@false">Ghost Button 4</BcButton> *@
-@*     <BcButton Size="@Size.Field" Kind="@Kind.Ghost" IsEnabled="@false">Ghost Button 5</BcButton> *@
-@*     <BcButton Size="@Size.Small" Kind="@Kind.Ghost" IsEnabled="@false">Ghost Button 6</BcButton> *@
-@* </p> *@
 
 @code
 {
     private string _title = "Default title";
     private string _size = Size.Default;
+    private string _kind = Kind.Primary;
+    private bool _isDisabled = false;
+
+    private async Task ToState(bool state)
+    {
+        _isDisabled = state;
+    }
+
+    private async Task ToKind(string kind)
+    {
+        _kind = kind;
+    }
 
     private async Task ChangeTitle(string title)
     {

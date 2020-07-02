@@ -5,10 +5,12 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Tabs
 
     public partial class BCTabs
     {
+        private BCTab _selected;
+
+        public List<BCTab> BcTabs = new List<BCTab>();
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
-
-        private BCTab _selected;
 
         public BCTab Selected
         {
@@ -19,7 +21,5 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Tabs
                 InvokeAsync(StateHasChanged);
             }
         }
-
-        public List<BCTab> BcTabs = new List<BCTab>();
     }
 }

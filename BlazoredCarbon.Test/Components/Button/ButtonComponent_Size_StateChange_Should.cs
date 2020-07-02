@@ -1,11 +1,13 @@
 namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
     using Bunit;
     using Carbon.BlazoredCarbon.Components.Button;
     using FluentAssertions;
     using Xunit;
 
+    [ExcludeFromCodeCoverage]
     public class ButtonComponent_Size_StateChange_Should : TestContext
     {
         [Theory]
