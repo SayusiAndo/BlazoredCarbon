@@ -3,11 +3,13 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
     using Bunit;
+    using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Button;
     using FluentAssertions;
     using Xunit;
 
     [ExcludeFromCodeCoverage]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class ButtonComponent_Kind_Should : TestContext
     {
         [Fact]
@@ -18,8 +20,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>();
 
             // Assert
-            cut.Find("button");
-            cut.Find("button").ToMarkup().Contains("bx--btn--primary").Should().BeTrue();
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindPrimary).Should().BeTrue();
         }
 
         [Fact]
@@ -27,11 +29,11 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("Kind", Kind.Primary));
+                (ButtonApi.Kind, Kind.Primary));
 
             // Assert
-            cut.Find("button");
-            cut.Find("button").ToMarkup().Contains("bx--btn--primary").Should().BeTrue();
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindPrimary).Should().BeTrue();
         }
 
         [Fact]
@@ -39,11 +41,11 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("Kind", Kind.Secondary));
+                (ButtonApi.Kind, Kind.Secondary));
 
             // Assert
-            cut.Find("button");
-            cut.Find("button").ToMarkup().Contains("bx--btn--secondary").Should().BeTrue();
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindSecondary).Should().BeTrue();
         }
 
         [Fact]
@@ -51,11 +53,11 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("Kind", Kind.Tertiary));
+                (ButtonApi.Kind, Kind.Tertiary));
 
             // Assert
-            cut.Find("button");
-            cut.Find("button").ToMarkup().Contains("bx--btn--tertiary").Should().BeTrue();
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindTertiary).Should().BeTrue();
         }
 
         [Fact]
@@ -63,11 +65,11 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("Kind", Kind.Danger));
+                (ButtonApi.Kind, Kind.Danger));
 
             // Assert
-            cut.Find("button");
-            cut.Find("button").ToMarkup().Contains("bx--btn--danger").Should().BeTrue();
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindDanger).Should().BeTrue();
         }
 
         [Fact]
@@ -75,11 +77,11 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("Kind", Kind.Ghost));
+                (ButtonApi.Kind, Kind.Ghost));
 
             // Assert
-            cut.Find("button");
-            cut.Find("button").ToMarkup().Contains("bx--btn--ghost").Should().BeTrue();
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindGhost).Should().BeTrue();
         }
     }
 }

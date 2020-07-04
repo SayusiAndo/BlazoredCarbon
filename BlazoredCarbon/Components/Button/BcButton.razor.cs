@@ -9,17 +9,6 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
     /// </summary>
     public partial class BcButton
     {
-        private string _buttonDefaultCss = "bx--btn";
-        private string _buttonKindDangerString = "bx--btn--danger";
-        private string _buttonKindGhostString = "bx--btn--ghost";
-
-        private string _buttonKindPrimaryString = "bx--btn--primary";
-        private string _buttonKindSecondaryString = "bx--btn--secondary";
-        private string _buttonKindTertiaryString = "bx--btn--tertiary";
-
-        private string _buttonSizeDefaultString = string.Empty;
-        private string _buttonSizeFieldString = "bx--btn--field";
-        private string _buttonSizeSmallString = "bx--btn--small";
         private string _buttonType = string.Empty;
 
         private string _kindValue = string.Empty;
@@ -95,19 +84,19 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
             switch (Size)
             {
                 case Button.Size.Default:
-                    _sizeValue = _buttonSizeDefaultString;
+                    _sizeValue = ButtonCss.BxBtnSizeDefault;
                     break;
 
                 case Button.Size.Field:
-                    _sizeValue = _buttonSizeFieldString;
+                    _sizeValue = ButtonCss.BxBtnSizeField;
                     break;
 
                 case Button.Size.Small:
-                    _sizeValue = _buttonSizeSmallString;
+                    _sizeValue = ButtonCss.BxBtnSizeSmall;
                     break;
 
                 default:
-                    _sizeValue = _buttonSizeDefaultString;
+                    _sizeValue = ButtonCss.BxBtnSizeDefault;
                     break;
             }
         }
@@ -117,27 +106,27 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
             switch (Kind)
             {
                 case Button.Kind.Primary:
-                    _kindValue = _buttonKindPrimaryString;
+                    _kindValue = ButtonCss.BxBtnKindPrimary;
                     break;
 
                 case Button.Kind.Secondary:
-                    _kindValue = _buttonKindSecondaryString;
+                    _kindValue = ButtonCss.BxBtnKindSecondary;
                     break;
 
                 case Button.Kind.Tertiary:
-                    _kindValue = _buttonKindTertiaryString;
+                    _kindValue = ButtonCss.BxBtnKindTertiary;
                     break;
 
                 case Button.Kind.Danger:
-                    _kindValue = _buttonKindDangerString;
+                    _kindValue = ButtonCss.BxBtnKindDanger;
                     break;
 
                 case Button.Kind.Ghost:
-                    _kindValue = _buttonKindGhostString;
+                    _kindValue = ButtonCss.BxBtnKindGhost;
                     break;
 
                 default:
-                    _kindValue = _buttonKindPrimaryString;
+                    _kindValue = ButtonCss.BxBtnKindPrimary;
                     break;
             }
         }
@@ -148,7 +137,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
             SetOrDefaultSizeValue();
             SetOrDefaultButtonType();
 
-            return $"{_buttonDefaultCss} " +
+            return $"{ButtonCss.BxBtn} " +
                    $"{_kindValue} " +
                    $"{_sizeValue}";
         }

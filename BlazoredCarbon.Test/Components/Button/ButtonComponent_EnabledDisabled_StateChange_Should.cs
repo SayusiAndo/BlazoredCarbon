@@ -3,12 +3,13 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
     using Bunit;
+    using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Button;
     using FluentAssertions;
     using Xunit;
 
-    // ReSharper disable once InconsistentNaming
     [ExcludeFromCodeCoverage]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class ButtonComponent_EnabledDisabled_StateChange_Should : TestContext
     {
         [Theory]
@@ -21,13 +22,13 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("IsDisabled", startState));
+                (ButtonApi.IsDisabled, startState));
 
             // Act
             cut.SetParametersAndRender(parameters => parameters.Add(p => p.IsDisabled, endState));
 
             // Assert
-            cut.Find("button").ToMarkup().Contains("disabled").Should().Be(result);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("disabled").Should().Be(result);
         }
     }
 }

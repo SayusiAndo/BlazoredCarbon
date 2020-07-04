@@ -3,11 +3,13 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
     using Bunit;
+    using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Button;
     using FluentAssertions;
     using Xunit;
 
     [ExcludeFromCodeCoverage]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class ButtonComponent_EnabledDisabled_Should : TestContext
     {
         [Fact]
@@ -17,8 +19,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>();
 
             // Assert
-            cut.Find("button").ToMarkup().Contains("enabled").Should().BeFalse();
-            cut.Find("button").ToMarkup().Contains("disabled").Should().BeFalse();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("enabled").Should().BeFalse();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("disabled").Should().BeFalse();
         }
 
         [Fact]
@@ -26,11 +28,11 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("IsDisabled", false));
+                (ButtonApi.IsDisabled, false));
 
             // Assert
-            cut.Find("button").ToMarkup().Contains("enabled").Should().BeFalse();
-            cut.Find("button").ToMarkup().Contains("disabled").Should().BeFalse();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("enabled").Should().BeFalse();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("disabled").Should().BeFalse();
         }
 
         [Fact]
@@ -38,11 +40,11 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("IsDisabled", true));
+                (ButtonApi.IsDisabled, true));
 
             // Assert
-            cut.Find("button").ToMarkup().Contains("enabled").Should().BeFalse();
-            cut.Find("button").ToMarkup().Contains("disabled").Should().BeTrue();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("enabled").Should().BeFalse();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("disabled").Should().BeTrue();
         }
     }
 }
