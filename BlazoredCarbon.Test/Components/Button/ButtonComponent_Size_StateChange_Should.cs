@@ -3,11 +3,13 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
     using Bunit;
+    using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Button;
     using FluentAssertions;
     using Xunit;
 
     [ExcludeFromCodeCoverage]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class ButtonComponent_Size_StateChange_Should : TestContext
     {
         [Theory]
@@ -25,15 +27,15 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                ("Size", startState));
+                (ButtonApi.Size, startState));
 
             // Act
             cut.SetParametersAndRender(parameters => parameters.Add(p => p.Size, endState));
 
             // Assert
-            cut.Find("button");
-            cut.Find("button").ToMarkup().Contains("bx--btn--small").Should().Be(isSmall);
-            cut.Find("button").ToMarkup().Contains("bx--btn--field").Should().Be(isField);
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnSizeSmall).Should().Be(isSmall);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnSizeField).Should().Be(isField);
         }
     }
 }
