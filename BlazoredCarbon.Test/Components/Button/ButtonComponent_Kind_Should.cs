@@ -13,6 +13,30 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     public class ButtonComponent_Kind_Should : TestContext
     {
         [Fact]
+        public async Task BeDanger_WhenItIsConfiguredAccordingly()
+        {
+            // Arrange
+            IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
+                (ButtonApi.Kind, BcButtonApi.Kind.Danger));
+
+            // Assert
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindDanger).Should().BeTrue();
+        }
+
+        [Fact]
+        public async Task BeGhost_WhenItIsConfiguredAccordingly()
+        {
+            // Arrange
+            IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
+                (ButtonApi.Kind, BcButtonApi.Kind.Ghost));
+
+            // Assert
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindGhost).Should().BeTrue();
+        }
+
+        [Fact]
         // It has to be checked in the doc
         public async Task BePrimary_ByDefault()
         {
@@ -58,30 +82,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
             // Assert
             cut.Find(HtmlElements.Button);
             cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindTertiary).Should().BeTrue();
-        }
-
-        [Fact]
-        public async Task BeDanger_WhenItIsConfiguredAccordingly()
-        {
-            // Arrange
-            IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.Kind, BcButtonApi.Kind.Danger));
-
-            // Assert
-            cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindDanger).Should().BeTrue();
-        }
-
-        [Fact]
-        public async Task BeGhost_WhenItIsConfiguredAccordingly()
-        {
-            // Arrange
-            IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.Kind, BcButtonApi.Kind.Ghost));
-
-            // Assert
-            cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindGhost).Should().BeTrue();
         }
     }
 }
