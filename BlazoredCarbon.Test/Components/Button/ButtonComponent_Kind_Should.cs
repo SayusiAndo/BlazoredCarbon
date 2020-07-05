@@ -29,7 +29,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.Kind, Kind.Primary));
+                (ButtonApi.Kind, BcButtonApi.Kind.Primary));
 
             // Assert
             cut.Find(HtmlElements.Button);
@@ -41,7 +41,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.Kind, Kind.Secondary));
+                (ButtonApi.Kind, BcButtonApi.Kind.Secondary));
 
             // Assert
             cut.Find(HtmlElements.Button);
@@ -53,7 +53,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.Kind, Kind.Tertiary));
+                (ButtonApi.Kind, BcButtonApi.Kind.Tertiary));
 
             // Assert
             cut.Find(HtmlElements.Button);
@@ -65,7 +65,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.Kind, Kind.Danger));
+                (ButtonApi.Kind, BcButtonApi.Kind.Danger));
 
             // Assert
             cut.Find(HtmlElements.Button);
@@ -77,7 +77,7 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
         {
             // Arrange
             IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.Kind, Kind.Ghost));
+                (ButtonApi.Kind, BcButtonApi.Kind.Ghost));
 
             // Assert
             cut.Find(HtmlElements.Button);

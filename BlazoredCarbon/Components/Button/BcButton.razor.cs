@@ -5,7 +5,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
     using Microsoft.AspNetCore.Components.Web;
 
     /// <summary>
-    ///     Button component
+    ///     BcButton component
     /// </summary>
     public partial class BcButton
     {
@@ -40,7 +40,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         ///     If it is not set up, then button is the default.
         /// </summary>
         [Parameter]
-        public ButtonType ButtonType { get; set; }
+        public string ButtonTypes { get; set; }
 
         /// <summary>
         ///     ChildContent of the component.
@@ -63,18 +63,18 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
 
         private void SetOrDefaultButtonType()
         {
-            switch (ButtonType)
+            switch (ButtonTypes)
             {
-                case ButtonType.Button:
-                    _buttonType = ButtonTypes.Button;
+                case Html.ButtonTypes.Button:
+                    _buttonType = Html.ButtonTypes.Button;
                     break;
 
-                case ButtonType.Submit:
-                    _buttonType = ButtonTypes.Submit;
+                case Html.ButtonTypes.Submit:
+                    _buttonType = Html.ButtonTypes.Submit;
                     break;
 
                 default:
-                    _buttonType = ButtonTypes.Button;
+                    _buttonType = Html.ButtonTypes.Button;
                     break;
             }
         }
@@ -83,15 +83,15 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         {
             switch (Size)
             {
-                case Button.Size.Default:
+                case BcButtonApi.Size.Default:
                     _sizeValue = ButtonCss.BxBtnSizeDefault;
                     break;
 
-                case Button.Size.Field:
+                case BcButtonApi.Size.Field:
                     _sizeValue = ButtonCss.BxBtnSizeField;
                     break;
 
-                case Button.Size.Small:
+                case BcButtonApi.Size.Small:
                     _sizeValue = ButtonCss.BxBtnSizeSmall;
                     break;
 
@@ -105,23 +105,23 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Button
         {
             switch (Kind)
             {
-                case Button.Kind.Primary:
+                case BcButtonApi.Kind.Primary:
                     _kindValue = ButtonCss.BxBtnKindPrimary;
                     break;
 
-                case Button.Kind.Secondary:
+                case BcButtonApi.Kind.Secondary:
                     _kindValue = ButtonCss.BxBtnKindSecondary;
                     break;
 
-                case Button.Kind.Tertiary:
+                case BcButtonApi.Kind.Tertiary:
                     _kindValue = ButtonCss.BxBtnKindTertiary;
                     break;
 
-                case Button.Kind.Danger:
+                case BcButtonApi.Kind.Danger:
                     _kindValue = ButtonCss.BxBtnKindDanger;
                     break;
 
-                case Button.Kind.Ghost:
+                case BcButtonApi.Kind.Ghost:
                     _kindValue = ButtonCss.BxBtnKindGhost;
                     break;
 

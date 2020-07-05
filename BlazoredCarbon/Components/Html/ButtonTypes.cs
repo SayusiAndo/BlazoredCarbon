@@ -1,4 +1,4 @@
-namespace SayusiAndo.Carbon.BlazoredCarbon.Components
+namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Html
 {
     public static class ButtonTypes
     {

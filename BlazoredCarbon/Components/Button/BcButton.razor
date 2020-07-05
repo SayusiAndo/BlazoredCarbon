@@ -1,7 +1,8 @@
+@using SayusiAndo.Carbon.BlazoredCarbon.Components.Html
 <DynamicElement
     TagName="@HtmlElements.Button"
     class="@GetCss()"
-    type="@ButtonTypes.Button"
+    type="@_buttonType"
     disabled="@IsDisabled"
     @onclick="@OnClick">
     @ChildContent
