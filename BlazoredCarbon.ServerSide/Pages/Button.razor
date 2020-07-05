@@ -11,22 +11,32 @@
             <BcButton @onclick="@(async () => await ChangeTitle("Third").ConfigureAwait(false))">Third</BcButton>
         </div>
         <div>
-            <BcButton @onclick="@(async () => await ChangeSize(Size.Default).ConfigureAwait(false))">
-                @Size.Default
+            <BcButton @onclick="@(async () => await ChangeSize(BcButtonApi.Size.Default).ConfigureAwait(false))">
+                @BcButtonApi.Size.Default
             </BcButton>
-            <BcButton @onclick="@(async () => await ChangeSize(Size.Field).ConfigureAwait(false))">
-                @Size.Field
+            <BcButton @onclick="@(async () => await ChangeSize(BcButtonApi.Size.Field).ConfigureAwait(false))">
+                @BcButtonApi.Size.Field
             </BcButton>
-            <BcButton @onclick="@(async () => await ChangeSize(Size.Small).ConfigureAwait(false))">
-                @Size.Small
+            <BcButton @onclick="@(async () => await ChangeSize(BcButtonApi.Size.Small).ConfigureAwait(false))">
+                @BcButtonApi.Size.Small
             </BcButton>
         </div>
         <div>
-            <BcButton @onclick="@(async () => await ToKind(Kind.Primary).ConfigureAwait(false))">@Kind.Primary</BcButton>
-            <BcButton @onclick="@(async () => await ToKind(Kind.Secondary).ConfigureAwait(false))">@Kind.Secondary</BcButton>
-            <BcButton @onclick="@(async () => await ToKind(Kind.Tertiary).ConfigureAwait(false))">@Kind.Tertiary</BcButton>
-            <BcButton @onclick="@(async () => await ToKind(Kind.Danger).ConfigureAwait(false))">@Kind.Danger</BcButton>
-            <BcButton @onclick="@(async () => await ToKind(Kind.Ghost).ConfigureAwait(false))">@Kind.Ghost</BcButton>
+            <BcButton @onclick="@(async () => await ToKind(BcButtonApi.Kind.Primary).ConfigureAwait(false))">
+                @BcButtonApi.Kind.Primary
+            </BcButton>
+            <BcButton @onclick="@(async () => await ToKind(BcButtonApi.Kind.Secondary).ConfigureAwait(false))">
+                @BcButtonApi.Kind.Secondary
+            </BcButton>
+            <BcButton @onclick="@(async () => await ToKind(BcButtonApi.Kind.Tertiary).ConfigureAwait(false))">
+                @BcButtonApi.Kind.Tertiary
+            </BcButton>
+            <BcButton @onclick="@(async () => await ToKind(BcButtonApi.Kind.Danger).ConfigureAwait(false))">
+                @BcButtonApi.Kind.Danger
+            </BcButton>
+            <BcButton @onclick="@(async () => await ToKind(BcButtonApi.Kind.Ghost).ConfigureAwait(false))">
+                @BcButtonApi.Kind.Ghost
+            </BcButton>
         </div>
         <div>
             <BcButton @onclick="@(async () => await ToState(false).ConfigureAwait(false))">Enabled</BcButton>
@@ -39,14 +49,19 @@
                 </BcButton>
             </div>
         </div>
+        <div>
+            <BcButton Kind="@BcButtonApi.Kind.Primary">
+                using BcButtonApi
+            </BcButton>
+        </div>
     </div>
 </p>
 
 @code
 {
     private string _title = "Default title";
-    private string _size = Size.Default;
-    private string _kind = Kind.Primary;
+    private string _size = BcButtonApi.Size.Default;
+    private string _kind = BcButtonApi.Kind.Primary;
     private bool _isDisabled = false;
 
     private async Task ToState(bool state)

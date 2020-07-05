@@ -13,12 +13,12 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     public class ButtonComponent_Size_StateChange_Should : TestContext
     {
         [Theory]
-        [InlineData(Size.Default, Size.Field, true, false)]
-        [InlineData(Size.Default, Size.Small, false, true)]
-        [InlineData(Size.Field, Size.Default, false, false)]
-        [InlineData(Size.Field, Size.Small, false, true)]
-        [InlineData(Size.Small, Size.Default, false, false)]
-        [InlineData(Size.Small, Size.Field, true, false)]
+        [InlineData(BcButtonApi.Size.Default, BcButtonApi.Size.Field, true, false)]
+        [InlineData(BcButtonApi.Size.Default, BcButtonApi.Size.Small, false, true)]
+        [InlineData(BcButtonApi.Size.Field, BcButtonApi.Size.Default, false, false)]
+        [InlineData(BcButtonApi.Size.Field, BcButtonApi.Size.Small, false, true)]
+        [InlineData(BcButtonApi.Size.Small, BcButtonApi.Size.Default, false, false)]
+        [InlineData(BcButtonApi.Size.Small, BcButtonApi.Size.Field, true, false)]
         public async Task BeDefault_ByDefault(
             string startState,
             string endState,

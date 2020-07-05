@@ -13,6 +13,18 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
     public class ButtonComponent_EnabledDisabled_Should : TestContext
     {
         [Fact]
+        public async Task BeDisabled_WhenDisabledStateIsConfigured()
+        {
+            // Arrange
+            IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
+                (ButtonApi.IsDisabled, true));
+
+            // Assert
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("enabled").Should().BeFalse();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains("disabled").Should().BeTrue();
+        }
+
+        [Fact]
         public async Task BeEnabled_ByDefault()
         {
             // Arrange
@@ -33,18 +45,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
             // Assert
             cut.Find(HtmlElements.Button).ToMarkup().Contains("enabled").Should().BeFalse();
             cut.Find(HtmlElements.Button).ToMarkup().Contains("disabled").Should().BeFalse();
-        }
-
-        [Fact]
-        public async Task BeDisabled_WhenDisabledStateIsConfigured()
-        {
-            // Arrange
-            IRenderedComponent<BcButton> cut = RenderComponent<BcButton>(
-                (ButtonApi.IsDisabled, true));
-
-            // Assert
-            cut.Find(HtmlElements.Button).ToMarkup().Contains("enabled").Should().BeFalse();
-            cut.Find(HtmlElements.Button).ToMarkup().Contains("disabled").Should().BeTrue();
         }
     }
 }
