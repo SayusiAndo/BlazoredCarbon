@@ -40,14 +40,14 @@
         <Content Update="Components\BCAccordion\BCAccordion.razor">
           <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
-        <Content Update="Components\Accordion\BCAccordionItem.razor">
-          <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <Content Update="Components\Accordion\BcAccordionItem.razor">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
-        <Content Update="Components\Accordion\BCAccordionContent.razor">
-          <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <Content Update="Components\Accordion\BcAccordionContent.razor">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
-        <Content Update="Components\Accordion\BCAccordionTitle.razor">
-          <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <Content Update="Components\Accordion\BcAccordionTitle.razor">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
     </ItemGroup>
 

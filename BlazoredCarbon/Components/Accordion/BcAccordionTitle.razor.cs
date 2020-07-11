@@ -7,18 +7,18 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
     ///     The text will be displayed in the accordion item.
     /// </summary>
     /// <example>
-    ///     <BCAccordion>
-    ///         <BCAccordionItem>
-    ///             <BCAccordionTitle>
+    ///     <BcAccordion>
+    ///         <BcAccordionItem>
+    ///             <BcAccordionTitle>
     ///                 Some title
-    ///             </BCAccordionTitle>
-    ///             <BCAccordionContent>
+    ///             </BcAccordionTitle>
+    ///             <BcAccordionContent>
     ///                 Some content
-    ///             </BCAccordionContent>
-    ///         </BCAccordionItem>
-    ///     </BCAccordion>
+    ///             </BcAccordionContent>
+    ///         </BcAccordionItem>
+    ///     </BcAccordion>
     /// </example>
-    public partial class BCAccordionTitle
+    public partial class BcAccordionTitle
     {
         /// <summary>
         ///     The content of the component
@@ -33,10 +33,10 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
         public Dictionary<string, object> UnknownParameters { get; set; }
 
         /// <summary>
-        /// The parent <see cref="BCAccordionItem">instance</see>.
+        /// The parent <see cref="BcAccordionItem">instance</see>.
         /// </summary>
         [CascadingParameter]
-        public BCAccordionItem Parent { get; set; }
+        public BcAccordionItem Parent { get; set; }
 
         private void Select()
         {

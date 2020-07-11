@@ -7,34 +7,34 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
     ///     An item in the accordion.
     /// </summary>
     /// <example>
-    ///     <BCAccordion>
-    ///         <BCAccordionItem>
-    ///             <BCAccordionTitle>
-    ///             </BCAccordionTitle>
-    ///             <BCAccordionContent>
+    ///     <BcAccordion>
+    ///         <BcAccordionItem>
+    ///             <BcAccordionTitle>
+    ///             </BcAccordionTitle>
+    ///             <BcAccordionContent>
     ///                 Some content
-    ///             </BCAccordionContent>
-    ///         </BCAccordionItem>
-    ///     </BCAccordion>
+    ///             </BcAccordionContent>
+    ///         </BcAccordionItem>
+    ///     </BcAccordion>
     /// </example>
     /// <see cref="BcAccordion" />
-    /// <see cref="BCAccordionTitle" />
-    /// <see cref="BCAccordionContent" />
-    public partial class BCAccordionItem
+    /// <see cref="BcAccordionTitle" />
+    /// <see cref="BcAccordionContent" />
+    public partial class BcAccordionItem
     {
         /// <summary>
         ///     The content of the component.
         /// </summary>
         /// <example>
-        ///     <BCAccordion>
-        ///         <BCAccordionItem>
-        ///             <BCAccordionTitle>
-        ///             </BCAccordionTitle>
-        ///             <BCAccordionContent>
+        ///     <BcAccordion>
+        ///         <BcAccordionItem>
+        ///             <BcAccordionTitle>
+        ///             </BcAccordionTitle>
+        ///             <BcAccordionContent>
         ///                 Some content
-        ///             </BCAccordionContent>
-        ///         </BCAccordionItem>
-        ///     </BCAccordion>
+        ///             </BcAccordionContent>
+        ///         </BcAccordionItem>
+        ///     </BcAccordion>
         /// </example>
         [Parameter]
         public RenderFragment ChildContent { get; set; }

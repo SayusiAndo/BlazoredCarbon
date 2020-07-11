@@ -8,20 +8,20 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
     ///     which will be collapsed and displayed.
     /// </summary>
     /// <example>
-    ///     <BCAccordion>
-    ///         <BCAccordionItem>
-    ///             <BCAccordionTitle>
-    ///             </BCAccordionTitle>
-    ///             <BCAccordionContent>
+    ///     <BcAccordion>
+    ///         <BcAccordionItem>
+    ///             <BcAccordionTitle>
+    ///             </BcAccordionTitle>
+    ///             <BcAccordionContent>
     ///                 Some content
-    ///             </BCAccordionContent>
-    ///         </BCAccordionItem>
-    ///     </BCAccordion>
+    ///             </BcAccordionContent>
+    ///         </BcAccordionItem>
+    ///     </BcAccordion>
     /// </example>
-    /// <see cref="BCAccordion" />
-    /// <see cref="BCAccordionItem" />
-    /// <see cref="BCAccordionTitle" />
-    public partial class BCAccordionContent
+    /// <see cref="BcAccordion" />
+    /// <see cref="BcAccordionItem" />
+    /// <see cref="BcAccordionTitle" />
+    public partial class BcAccordionContent
     {
         /// <summary>
         ///     The <see cref="RenderFragment" /> content of the component.
