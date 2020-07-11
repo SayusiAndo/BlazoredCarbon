@@ -2,6 +2,17 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components
 {
     public struct CarbonDesignSystemCss
     {
+        public struct Accordion
+        {
+            public const string BxAccordionItemActive = "bx--accordion__item--active";
+            public const string BxAccordionItem = "bx--accordion__item";
+            public const string BxAccordionHeading = "bx--accordion__heading";
+            public const string BxAccordionTitle = "bx--accordion__title";
+            public const string BxAccordionArrow = "bx--accordion__arrow";
+            public const string BxAccordion = "bx--accordion";
+            public const string BxAccordionContent = "bx--accordion__content";
+        }
+
         public struct Button
         {
             /// <summary>

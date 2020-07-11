@@ -1,7 +1,6 @@
-<CascadingValue Value="this">
-    <DynamicElement TagName="@HtmlElements.Ul"
-                    data-accordion
-                    class="@GetCss()">
-        @ChildContent
-    </DynamicElement>
-</CascadingValue>
+<DynamicElement TagName="@HtmlElements.Ul"
+                data-accordion
+                class="@GetCss()"
+                @attributes="@UnknownParameters">
+    @ChildContent
+</DynamicElement>

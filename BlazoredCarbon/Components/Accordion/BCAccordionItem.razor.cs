@@ -1,6 +1,6 @@
 namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
 {
-    using System.Threading.Tasks;
+    using System.Collections.Generic;
     using Microsoft.AspNetCore.Components;
 
     /// <summary>
@@ -22,10 +22,6 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
     /// <see cref="BCAccordionContent" />
     public partial class BCAccordionItem
     {
-        private string activeClass = "bx--accordion__item--active";
-
-        private string defaultClass = "bx--accordion__item";
-
         /// <summary>
         ///     The content of the component.
         /// </summary>
@@ -48,38 +44,28 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
         /// </summary>
         /// <typeparam name="InitialSetup">Item is opened by default</typeparam>
         [Parameter]
-        public bool InitialSetup { get; set; } = false;
+        public bool IsActive { get; set; } = false;
 
-        [CascadingParameter]
-        public BCAccordion BcAccordion { get; set; }
+        /// <summary>
+        /// Additional parameters which aren't part of the BcAccordionApi.
+        /// </summary>
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string, object> UnknownParameters { get; set; }
 
         private string GetCss()
         {
-            if (BcAccordion.ActiveAccordionItem == this)
+            if (IsActive)
             {
-                return $"{defaultClass} {activeClass}";
+                return $"{CarbonDesignSystemCss.Accordion.BxAccordionItem} " +
+                       $"{CarbonDesignSystemCss.Accordion.BxAccordionItemActive}";
             }
 
-            return defaultClass;
-        }
-
-        protected override async Task OnInitializedAsync()
-        {
-            if (InitialSetup)
-            {
-                BcAccordion.ActiveAccordionItem = null;
-                BcAccordion.ActiveAccordionItem = this;
-            }
-
-            BcAccordion.BcAccordionItems.Add(this);
-            await base.OnInitializedAsync();
+            return CarbonDesignSystemCss.Accordion.BxAccordionItem;
         }
 
         public void Select()
         {
-            BcAccordion.ActiveAccordionItem = null;
-            BcAccordion.ActiveAccordionItem = this;
-
+            IsActive = !IsActive;
             InvokeAsync(StateHasChanged);
         }
     }
