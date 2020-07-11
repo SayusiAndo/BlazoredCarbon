@@ -2,12 +2,15 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
+
     using Bunit;
+
     using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Accordion;
-    using FluentAssertions;
-    using Xunit;
 
+    using FluentAssertions;
+
+    using Xunit;
 
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     [ExcludeFromCodeCoverage]
@@ -24,19 +27,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
         }
 
         [Fact]
-        public async Task HaveTheRight_CssClasses()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>();
-
-            // Assert
-            cut.Find(HtmlElements.Ul).ToMarkup()
-                .Contains(CarbonDesignSystemCss.Accordion.BxAccordion)
-                .Should()
-                .BeTrue();
-        }
-
-        [Fact]
         public async Task Have_DataAccordionProperty()
         {
             // Arrange
@@ -45,6 +35,19 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
             // Assert
             cut.Find(HtmlElements.Ul).ToMarkup()
                 .Contains("data-accordion")
+                .Should()
+                .BeTrue();
+        }
+
+        [Fact]
+        public async Task HaveTheRight_CssClasses()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>();
+
+            // Assert
+            cut.Find(HtmlElements.Ul).ToMarkup()
+                .Contains(CarbonDesignSystemCss.Accordion.BxAccordion)
                 .Should()
                 .BeTrue();
         }

@@ -1,6 +1,7 @@
 namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
 {
     using System.Collections.Generic;
+
     using Microsoft.AspNetCore.Components;
 
     /// <summary>
@@ -27,13 +28,13 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
         public RenderFragment ChildContent { get; set; }
 
         /// <summary>
-        /// Additional parameters which aren't part of the BcAccordionApi.
+        ///     Additional parameters which aren't part of the BcAccordionApi.
         /// </summary>
         [Parameter(CaptureUnmatchedValues = true)]
         public Dictionary<string, object> UnknownParameters { get; set; }
 
         /// <summary>
-        /// The parent <see cref="BcAccordionItem">instance</see>.
+        ///     The parent <see cref="BcAccordionItem">instance</see>.
         /// </summary>
         [CascadingParameter]
         public BcAccordionItem Parent { get; set; }

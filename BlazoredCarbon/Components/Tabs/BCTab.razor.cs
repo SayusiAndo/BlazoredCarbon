@@ -2,6 +2,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Tabs
 {
     using System.Linq;
     using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Components;
 
     public partial class BCTab

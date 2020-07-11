@@ -62,29 +62,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
         }
 
         [Fact]
-        public async Task Splatting_SingleUnknownParameter()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                bca =>
-                {
-                    bca.AddChildContent<BcAccordionItem>(bcai =>
-                    {
-                        bcai.AddChildContent<BcAccordionContent>(bcaic =>
-                        {
-                            bcaic.AddUnmatched("custom", "value");
-                            bcaic.AddChildContent("Something stuff");
-                        });
-                    });
-                });
-
-            // Assert
-            IElement con = cut.Find("ul>li>div");
-            con.Attributes.GetNamedItem("custom").Value
-                .Should().Be("value");
-        }
-
-        [Fact]
         public async Task Splatting_MultipleUnknowParameters()
         {
             // Arrange
@@ -108,6 +85,29 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
                 .Should().Be("value");
             con.Attributes.GetNamedItem("custom1").Value
                 .Should().Be("value1");
+        }
+
+        [Fact]
+        public async Task Splatting_SingleUnknownParameter()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
+                bca =>
+                {
+                    bca.AddChildContent<BcAccordionItem>(bcai =>
+                    {
+                        bcai.AddChildContent<BcAccordionContent>(bcaic =>
+                        {
+                            bcaic.AddUnmatched("custom", "value");
+                            bcaic.AddChildContent("Something stuff");
+                        });
+                    });
+                });
+
+            // Assert
+            IElement con = cut.Find("ul>li>div");
+            con.Attributes.GetNamedItem("custom").Value
+                .Should().Be("value");
         }
 
         [Fact]

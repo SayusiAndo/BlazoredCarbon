@@ -33,34 +33,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
         }
 
         [Fact]
-        public async Task Disabled_WhenItIsConfiguredSo()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                p => p.AddChildContent<BcAccordionItem>(b => { b.Add(p => p.IsActive, false); }));
-
-            // Assert
-            cut.Find(HtmlElements.Li).ToMarkup()
-                .Contains(CarbonDesignSystemCss.Accordion.BxAccordionItemActive)
-                .Should()
-                .BeFalse();
-        }
-
-        [Fact]
-        public async Task Enabled_WhenItisConfigureSo()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                p => p.AddChildContent<BcAccordionItem>(b => { b.Add(p => p.IsActive, true); }));
-
-            // Assert
-            cut.Find(HtmlElements.Li).ToMarkup()
-                .Contains(CarbonDesignSystemCss.Accordion.BxAccordionItemActive)
-                .Should()
-                .BeTrue();
-        }
-
-        [Fact]
         public async Task Disabled_WhenClickOnItAndItWasEnabled()
         {
             // Arrange
@@ -83,6 +55,20 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
         }
 
         [Fact]
+        public async Task Disabled_WhenItIsConfiguredSo()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
+                p => p.AddChildContent<BcAccordionItem>(b => { b.Add(p => p.IsActive, false); }));
+
+            // Assert
+            cut.Find(HtmlElements.Li).ToMarkup()
+                .Contains(CarbonDesignSystemCss.Accordion.BxAccordionItemActive)
+                .Should()
+                .BeFalse();
+        }
+
+        [Fact]
         public async Task Enabled_WhenClickOnItAndItWasDisabled()
         {
             // Arrange
@@ -96,6 +82,20 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
 
             // Act
             button.Click();
+
+            // Assert
+            cut.Find(HtmlElements.Li).ToMarkup()
+                .Contains(CarbonDesignSystemCss.Accordion.BxAccordionItemActive)
+                .Should()
+                .BeTrue();
+        }
+
+        [Fact]
+        public async Task Enabled_WhenItisConfigureSo()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
+                p => p.AddChildContent<BcAccordionItem>(b => { b.Add(p => p.IsActive, true); }));
 
             // Assert
             cut.Find(HtmlElements.Li).ToMarkup()

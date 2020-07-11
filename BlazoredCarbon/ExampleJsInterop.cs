@@ -1,6 +1,7 @@
 namespace SayusiAndo.Carbon.BlazoredCarbon
 {
     using System.Threading.Tasks;
+
     using Microsoft.JSInterop;
 
     public class ExampleJsInterop

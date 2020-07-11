@@ -1,7 +1,6 @@
 namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
 {
     using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
     using System.Threading.Tasks;
 
     using AngleSharp.Dom;
@@ -10,7 +9,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
 
     using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Accordion;
-    using Carbon.BlazoredCarbon.Components.Button;
 
     using FluentAssertions;
 
@@ -20,27 +18,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class BcAccordionItemTitle_Should : TestContext
     {
-        [Fact]
-        public async Task Have_ButtonElem()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                bca =>
-                {
-                    bca.AddChildContent<BcAccordionItem>(bcai =>
-                    {
-                        bcai.AddChildContent<BcAccordionTitle>(bcat => { bcat.AddChildContent("Title"); });
-                    });
-                });
-
-            // Assert
-            cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup()
-                .Contains("Title")
-                .Should()
-                .BeTrue();
-        }
-
         [Fact]
         public async Task Button_HaveProperClasses()
         {
@@ -79,23 +56,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
         }
 
         [Fact]
-        public async Task Have_DivWithinButton()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                bca =>
-                {
-                    bca.AddChildContent<BcAccordionItem>(bcai =>
-                    {
-                        bcai.AddChildContent<BcAccordionTitle>(bcat => { bcat.AddChildContent("Title"); });
-                    });
-                });
-
-            // Assert
-            cut.Find("button>div");
-        }
-
-        [Fact]
         public async Task Div_HaveProperClasses()
         {
             // Arrange
@@ -113,30 +73,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
             div.ClassList.Contains(CarbonDesignSystemCss.Accordion.BxAccordionTitle)
                 .Should()
                 .BeTrue();
-        }
-
-        [Fact]
-        public async Task Div_Splatting_SingleUnknowParameter()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                bca =>
-                {
-                    bca.AddChildContent<BcAccordionItem>(bcai =>
-                    {
-                        bcai.AddChildContent<BcAccordionTitle>(bcat =>
-                        {
-                            bcat.AddUnmatched("custom", "value");
-                            bcat.AddChildContent("Title");
-                        });
-                    });
-                });
-
-            // Assert
-            IElement div = cut.Find("button>div");
-            div.Attributes.GetNamedItem("custom")
-                .Value
-                .Should().Be("value");
         }
 
         [Fact]
@@ -165,6 +101,68 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
             div.Attributes.GetNamedItem("custom1")
                 .Value
                 .Should().Be("value1");
+        }
+
+        [Fact]
+        public async Task Div_Splatting_SingleUnknowParameter()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
+                bca =>
+                {
+                    bca.AddChildContent<BcAccordionItem>(bcai =>
+                    {
+                        bcai.AddChildContent<BcAccordionTitle>(bcat =>
+                        {
+                            bcat.AddUnmatched("custom", "value");
+                            bcat.AddChildContent("Title");
+                        });
+                    });
+                });
+
+            // Assert
+            IElement div = cut.Find("button>div");
+            div.Attributes.GetNamedItem("custom")
+                .Value
+                .Should().Be("value");
+        }
+
+        [Fact]
+        public async Task Have_ButtonElem()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
+                bca =>
+                {
+                    bca.AddChildContent<BcAccordionItem>(bcai =>
+                    {
+                        bcai.AddChildContent<BcAccordionTitle>(bcat => { bcat.AddChildContent("Title"); });
+                    });
+                });
+
+            // Assert
+            cut.Find(HtmlElements.Button);
+            cut.Find(HtmlElements.Button).ToMarkup()
+                .Contains("Title")
+                .Should()
+                .BeTrue();
+        }
+
+        [Fact]
+        public async Task Have_DivWithinButton()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
+                bca =>
+                {
+                    bca.AddChildContent<BcAccordionItem>(bcai =>
+                    {
+                        bcai.AddChildContent<BcAccordionTitle>(bcat => { bcat.AddChildContent("Title"); });
+                    });
+                });
+
+            // Assert
+            cut.Find("button>div");
         }
 
         [Fact]

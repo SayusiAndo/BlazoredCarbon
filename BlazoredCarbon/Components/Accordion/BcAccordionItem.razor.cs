@@ -1,6 +1,7 @@
 namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
 {
     using System.Collections.Generic;
+
     using Microsoft.AspNetCore.Components;
 
     /// <summary>
@@ -47,7 +48,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
         public bool IsActive { get; set; } = false;
 
         /// <summary>
-        /// Additional parameters which aren't part of the BcAccordionApi.
+        ///     Additional parameters which aren't part of the BcAccordionApi.
         /// </summary>
         [Parameter(CaptureUnmatchedValues = true)]
         public Dictionary<string, object> UnknownParameters { get; set; }

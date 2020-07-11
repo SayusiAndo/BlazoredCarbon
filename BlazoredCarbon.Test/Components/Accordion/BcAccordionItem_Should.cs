@@ -2,10 +2,14 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
+
     using Bunit;
+
     using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Accordion;
+
     using FluentAssertions;
+
     using Xunit;
 
     [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -27,20 +31,6 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
         }
 
         [Fact]
-        public async Task Have_TheProper_CssClasses()
-        {
-            // Arrange
-            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                p => p.AddChildContent<BcAccordionItem>());
-
-            // Assert
-            cut.Find(HtmlElements.Li).ToMarkup()
-                .Contains(CarbonDesignSystemCss.Accordion.BxAccordionItem)
-                .Should()
-                .BeTrue();
-        }
-
-        [Fact]
         public async Task Have_DataAccordionItem_Property()
         {
             // Arrange
@@ -55,16 +45,15 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
         }
 
         [Fact]
-        public async Task Splatting_SingleUnknownAttribute()
+        public async Task Have_TheProper_CssClasses()
         {
             // Arrange
             IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
-                p => p.AddChildContent<BcAccordionItem>(builder => builder.AddUnmatched("custom", "value"))
-            );
+                p => p.AddChildContent<BcAccordionItem>());
 
             // Assert
             cut.Find(HtmlElements.Li).ToMarkup()
-                .Contains("custom=\"value\"")
+                .Contains(CarbonDesignSystemCss.Accordion.BxAccordionItem)
                 .Should()
                 .BeTrue();
         }
@@ -89,6 +78,21 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Accordion
 
             cut.Find(HtmlElements.Li).ToMarkup()
                 .Contains("custom1=\"value1\"")
+                .Should()
+                .BeTrue();
+        }
+
+        [Fact]
+        public async Task Splatting_SingleUnknownAttribute()
+        {
+            // Arrange
+            IRenderedComponent<BcAccordion> cut = RenderComponent<BcAccordion>(
+                p => p.AddChildContent<BcAccordionItem>(builder => builder.AddUnmatched("custom", "value"))
+            );
+
+            // Assert
+            cut.Find(HtmlElements.Li).ToMarkup()
+                .Contains("custom=\"value\"")
                 .Should()
                 .BeTrue();
         }
