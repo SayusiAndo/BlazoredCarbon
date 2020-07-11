@@ -1,0 +1,8 @@
+<CascadingValue Value="@this">
+    <DynamicElement TagName="@HtmlElements.Li"
+                    data-accordion-item
+                    class="@GetCss()"
+                    @attributes="@UnknownParameters">
+        @ChildContent
+    </DynamicElement>
+</CascadingValue>

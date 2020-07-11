@@ -1,6 +1,7 @@
 namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Tabs
 {
     using System.Collections.Generic;
+
     using Microsoft.AspNetCore.Components;
 
     public partial class BCTabs

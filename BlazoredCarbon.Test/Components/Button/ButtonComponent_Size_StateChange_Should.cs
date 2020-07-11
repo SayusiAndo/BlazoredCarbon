@@ -2,10 +2,14 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
+
     using Bunit;
+
     using Carbon.BlazoredCarbon.Components;
     using Carbon.BlazoredCarbon.Components.Button;
+
     using FluentAssertions;
+
     using Xunit;
 
     [ExcludeFromCodeCoverage]
@@ -34,8 +38,10 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnSizeSmall).Should().Be(isSmall);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnSizeField).Should().Be(isField);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnSizeSmall).Should()
+                .Be(isSmall);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnSizeField).Should().Be
+                (isField);
         }
     }
 }
