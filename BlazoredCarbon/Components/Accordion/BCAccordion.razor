@@ -1,8 +1,7 @@
 <CascadingValue Value="this">
-    <DynamicElement TagName="ul"
+    <DynamicElement TagName="@HtmlElements.Ul"
                     data-accordion
-                    class="bx--accordion"
-                    SingleOpen="true">
+                    class="@GetCss()">
         @ChildContent
     </DynamicElement>
 </CascadingValue>

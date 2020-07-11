@@ -21,7 +21,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindDanger).Should().BeTrue();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindDanger).Should()
+                .BeTrue();
         }
 
         [Fact]
@@ -33,7 +34,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindGhost).Should().BeTrue();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindGhost).Should()
+                .BeTrue();
         }
 
         [Fact]
@@ -45,7 +47,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindPrimary).Should().BeTrue();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindPrimary).Should()
+                .BeTrue();
         }
 
         [Fact]
@@ -57,7 +60,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindPrimary).Should().BeTrue();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindPrimary).Should()
+                .BeTrue();
         }
 
         [Fact]
@@ -69,7 +73,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindSecondary).Should().BeTrue();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindSecondary).Should()
+                .BeTrue();
         }
 
         [Fact]
@@ -81,7 +86,8 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindTertiary).Should().BeTrue();
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindTertiary).Should()
+                .BeTrue();
         }
     }
 }

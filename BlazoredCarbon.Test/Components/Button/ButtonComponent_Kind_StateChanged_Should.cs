@@ -50,11 +50,16 @@ namespace SayusiAndo.BlazoredCarbon.Test.Components.Button
 
             // Assert
             cut.Find(HtmlElements.Button);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindPrimary).Should().Be(isPrimary);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindSecondary).Should().Be(isSecondary);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindTertiary).Should().Be(isTertiary);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindDanger).Should().Be(isDanger);
-            cut.Find(HtmlElements.Button).ToMarkup().Contains(ButtonCss.BxBtnKindGhost).Should().Be(isGhost);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindPrimary).Should()
+                .Be(isPrimary);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindSecondary).Should()
+                .Be(isSecondary);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindTertiary).Should()
+                .Be(isTertiary);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindDanger).Should()
+                .Be(isDanger);
+            cut.Find(HtmlElements.Button).ToMarkup().Contains(CarbonDesignSystemCss.Button.BxBtnKindGhost).Should()
+                .Be(isGhost);
         }
     }
 }

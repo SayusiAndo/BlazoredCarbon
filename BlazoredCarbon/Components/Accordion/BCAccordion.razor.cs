@@ -27,6 +27,9 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string, object> UnknownParameters { get; set; }
+
         public BCAccordionItem ActiveAccordionItem
         {
             get => _selected;
@@ -35,6 +38,11 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
                 _selected = value;
                 InvokeAsync(StateHasChanged);
             }
+        }
+
+        private string GetCss()
+        {
+            return BcAccordionCss.BxAccordion;
         }
     }
 }
