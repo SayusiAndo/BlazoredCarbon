@@ -42,7 +42,7 @@ namespace SayusiAndo.Carbon.BlazoredCarbon.Components.Accordion
         /// <summary>
         ///     If this item is open by default than it has to be true.
         /// </summary>
-        /// <typeparam name="InitialSetup">Item is opened by default</typeparam>
+        /// <typeparam name="IsActive">Item is opened by default</typeparam>
         [Parameter]
         public bool IsActive { get; set; } = false;
 
